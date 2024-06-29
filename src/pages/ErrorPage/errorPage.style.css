@@ -1,0 +1,49 @@
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.error-container {
+  text-align: center;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.error-title {
+  font-size: 4rem;
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
+
+.error-status {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.error-message {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.error-link {
+  font-size: 1rem;
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #3498db;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: background-color 300ms, color 300ms;
+}
+
+.error-link:hover {
+  background-color: #3498db;
+  color: #fff;
+}

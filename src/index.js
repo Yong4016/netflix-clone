@@ -1,13 +1,55 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import ErrorPage from './pages/ErrorPage/errorPage';
+import Homepage from './pages/Homepage/Homepage';
+import MoviePage from './pages/Movies/MoviePage';
+import MovieDetailPage from './pages/MovieDetail/MovieDetailPage';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <ErrorPage />,
+    children: [
+      { index: true, element: <Homepage /> },
+      {
+        path: 'movie',
+        children: [
+          { index: true, element: <MoviePage /> },
+          { path: ':id', element: <MovieDetailPage /> },
+        ],
+      },
+    ],
+  },
+]);
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <App />,
+//     errorElement: <ErrorPage />,
+//     children: [
+//       { index: true, element: <Homepage /> },
+//       {
+//         path: 'movie',
+//         children: [
+//           { index: true, element: <MoviePage /> },
+//           { path: ':id', element: <MovieDetailPage /> },
+//         ],
+//       },
+//     ],
+//   },
+// ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
