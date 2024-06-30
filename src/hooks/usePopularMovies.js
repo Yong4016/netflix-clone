@@ -9,6 +9,6 @@ export const usePopularMovies = () => {
   return useQuery({
     queryKey: ['popularMovies'],
     queryFn: getPopularMovies,
-    select: (data) => data.data,
+    select: (result) => result.data,
   });
 };

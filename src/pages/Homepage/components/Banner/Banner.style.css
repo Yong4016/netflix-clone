@@ -40,3 +40,28 @@
   line-height: 1.5;
   letter-spacing: 0.05rem;
 }
+@media (max-width: 780px) {
+  .banner {
+    height: 46vh;
+  }
+  .banner-text-area {
+    width: 46%;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner {
+    height: 36vh;
+    background-position: left;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .banner-text-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 66%;
+    padding: 1rem;
+  }
+}
