@@ -1,0 +1,42 @@
+.banner {
+  height: 56vh;
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner:before {
+  position: absolute;
+  height: 56vh;
+  width: 100%;
+  left: 0;
+  content: '';
+  background: linear-gradient(to top, black, transparent);
+}
+
+.banner-text-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 36%;
+  padding: 2rem;
+}
+
+.banner-title {
+  z-index: 2;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.1rem;
+}
+
+.banner-overview {
+  z-index: 2;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+}

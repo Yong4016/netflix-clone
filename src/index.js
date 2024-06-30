@@ -9,6 +9,7 @@ import ErrorPage from './pages/ErrorPage/errorPage';
 import Homepage from './pages/Homepage/Homepage';
 import MoviePage from './pages/Movies/MoviePage';
 import MovieDetailPage from './pages/MovieDetail/MovieDetailPage';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const router = createBrowserRouter([
   {
@@ -28,28 +29,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <App />,
-//     errorElement: <ErrorPage />,
-//     children: [
-//       { index: true, element: <Homepage /> },
-//       {
-//         path: 'movie',
-//         children: [
-//           { index: true, element: <MoviePage /> },
-//           { path: ':id', element: <MovieDetailPage /> },
-//         ],
-//       },
-//     ],
-//   },
-// ]);
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

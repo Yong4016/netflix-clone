@@ -1,0 +1,7 @@
+.carousel-container {
+  overflow: hidden;
+  height: 440px;
+}
+.movie-carousel {
+  transition: all 500ms;
+}
