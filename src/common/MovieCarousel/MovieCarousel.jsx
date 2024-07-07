@@ -17,9 +17,9 @@ const MovieCarousel = ({ title, movies }) => {
         infinite={true}
         containerClass='carousel-container'
       >
-        {movies.map((movie) => (
+        {movies.map((movie, index) => (
           <MovieCard
-            movieId={movie.id}
+            key={movie.id}
             movie={movie}
           />
         ))}

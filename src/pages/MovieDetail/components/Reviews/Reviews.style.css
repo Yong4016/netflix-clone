@@ -1,0 +1,57 @@
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.avatar-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  background-position: center;
+  background-size: cover;
+  background-color: #f8f8f8;
+}
+
+.username {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+}
+
+.review-content {
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  position: relative;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.review-content.clamp-text {
+  -webkit-line-clamp: 4;
+  max-height: 7.2em;
+}
+
+.review-toggle-button {
+  display: flex;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding-right: 1.5rem;
+  justify-content: flex-end;
+  cursor: pointer;
+}
+
+.review-timestamp {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rem 1.5rem 1rem 0;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.review-button {
+  margin-right: 0.5rem;
+}

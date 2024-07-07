@@ -1,8 +1,10 @@
 import './MovieCard.style.css';
 import Badge from 'react-bootstrap/Badge';
 import { useGenre } from '../../hooks/useGenre';
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({ movie }) => {
+  const navigate = useNavigate();
   const { data: genre } = useGenre();
 
   const showGenre = (genre_ids) => {
@@ -13,12 +15,17 @@ const MovieCard = ({ movie }) => {
     });
   };
 
+  const handleClick = () => {
+    navigate(`/movie/${movie.id}`);
+  };
+
   return (
     <div
       style={{
         backgroundImage: `url(https://image.tmdb.org/t/p/w300_and_h450_bestv2/${movie.poster_path})`,
       }}
       className='movie-card'
+      onClick={handleClick}
     >
       <div className='movie-card-overlay'>
         <h1 className='movie-title'>{movie.title}</h1>
