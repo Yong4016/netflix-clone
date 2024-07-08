@@ -3,6 +3,7 @@
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 0.5rem;
 }
 
 .banner:before {
@@ -40,6 +41,7 @@
   line-height: 1.5;
   letter-spacing: 0.05rem;
 }
+
 @media (max-width: 780px) {
   .banner {
     height: 46vh;

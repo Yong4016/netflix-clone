@@ -1,0 +1,13 @@
+.dropdown-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 1rem;
+}
+
+.dropdown-items {
+  width: 90%;
+}
+
+

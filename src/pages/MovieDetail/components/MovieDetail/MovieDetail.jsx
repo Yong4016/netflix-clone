@@ -1,11 +1,16 @@
-import React from 'react';
-import { Badge } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Badge, Button, Modal } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import './MovieDetail.style.css';
+import YouTube from 'react-youtube';
 
-const MovieDetail = ({ movie }) => {
+const MovieDetail = ({ movie, trailer }) => {
+  const [showTrailer, setShowTrailer] = useState(false);
+
+  const handleClose = () => setShowTrailer(false);
+  const handleShow = () => setShowTrailer(true);
   return (
     <Container style={{ marginTop: '1.5rem' }}>
       <Row>
@@ -81,6 +86,34 @@ const MovieDetail = ({ movie }) => {
                 <strong>Revenue</strong> ${movie.revenue.toLocaleString()}
               </li>
             </ul>
+            <Button
+              variant='outline-danger'
+              onClick={handleShow}
+              style={{ marginTop: '0.5rem', width: '100%' }}
+            >
+              Watch Trailer
+            </Button>
+            <Modal
+              show={showTrailer}
+              onHide={handleClose}
+              size='xl'
+              centered
+              data-bs-theme='dark'
+            >
+              <Modal.Header closeButton>
+                <Modal.Title>{movie.title} Trailer</Modal.Title>
+              </Modal.Header>
+              <Modal.Body className='modal-body'>
+                {trailer?.key ? (
+                  <YouTube
+                    videoId={trailer.key}
+                    opts={{ height: '100%', width: '100%' }}
+                  />
+                ) : (
+                  <p style={{ fontSize: '1.5rem' }}>Sorry, no trailer available</p>
+                )}
+              </Modal.Body>
+            </Modal>
           </div>
         </Col>
       </Row>
